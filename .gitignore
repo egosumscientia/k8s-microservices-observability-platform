@@ -1,0 +1,68 @@
+# ----------------------------
+# PYTHON
+# ----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.pkl
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ----------------------------
+# DOCKER
+# ----------------------------
+# Evitar archivos creados accidentalmente
+docker-compose.override.yml
+*.tmp
+
+# ----------------------------
+# KUBERNETES MANIFESTS
+# ----------------------------
+# Evitar archivos generados por kustomize u otras tools
+*.generated.yaml
+*.backup.yaml
+
+# ----------------------------
+# EDITOR / IDE
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ----------------------------
+# OS
+# ----------------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# TESTS / LOAD TESTING
+# ----------------------------
+*.out
+*.report
+load-testing/results/
+load-testing/*.tmp
+
+# ----------------------------
+# PROJECT SPECIFIC
+# ----------------------------
+# Diagramas exportados
+architecture/*.png
+architecture/*.svg
+
+# Excluir archivos temporales
+*.bak
+*.old
