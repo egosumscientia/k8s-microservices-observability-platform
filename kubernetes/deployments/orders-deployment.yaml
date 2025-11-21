@@ -15,10 +15,13 @@ spec:
     spec:
       containers:
       - name: orders
-        image: orders-service:v1
+        image: orders-service:latest
         imagePullPolicy: Never
         ports:
         - containerPort: 8080
+        env:
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://otel-collector.observability.svc.cluster.local:4317"
         resources:
           requests:
             cpu: "200m"
