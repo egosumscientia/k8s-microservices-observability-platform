@@ -3,9 +3,20 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
+
 class AuthRequest(BaseModel):
     user: str
     password: str
+
+# GET / → health check
+
+
+@app.get("/")
+def health():
+    return {"status": "ok", "service": "auth"}
+
+# POST /login → tu login real
+
 
 @app.post("/login")
 def login(data: AuthRequest):
