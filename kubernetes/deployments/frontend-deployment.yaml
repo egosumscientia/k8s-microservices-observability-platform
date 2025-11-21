@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: paulo/frontend-service:v1
+        image: frontend-service:v1
+        imagePullPolicy: Never
         ports:
         - containerPort: 8080
         resources:
