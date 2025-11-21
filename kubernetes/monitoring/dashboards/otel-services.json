@@ -1,0 +1,33 @@
+{
+    "id": null,
+    "title": "OpenTelemetry Services Metrics",
+    "uid": "otel-services",
+    "tags": ["otel", "services", "metrics"],
+    "timezone": "browser",
+    "panels": [
+        {
+        "type": "graph",
+        "title": "Service Request Count",
+        "targets": [
+            {
+            "expr": "http_requests_total",
+            "legendFormat": "{{service.name}}",
+            "refId": "A"
+            }
+        ],
+        "datasource": "Prometheus"
+        },
+        {
+        "type": "graph",
+        "title": "Service Latency (ms)",
+        "targets": [
+            {
+            "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[1m])) by (le, service_name))",
+            "legendFormat": "{{service_name}}",
+            "refId": "B"
+            }
+        ],
+        "datasource": "Prometheus"
+        }
+    ]
+}
